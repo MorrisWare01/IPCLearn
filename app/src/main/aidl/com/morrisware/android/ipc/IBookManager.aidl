@@ -11,7 +11,14 @@ interface IBookManager {
 
     Map getBookMap();
 
-    void registerOnNewBookAddListener(IOnNewBookAddListener listener);
+    void registerOnNewBookAddListener(in IOnNewBookAddListener listener);
 
-    void unregisterOnNewBookAddListener(IOnNewBookAddListener listener);
+    void unregisterOnNewBookAddListener(in IOnNewBookAddListener listener);
+
+    void testIn(in List<Book> books);
+
+    void testOut(out List<Book> books);
+
+    void testInout(inout List<Book> books);
+
 }

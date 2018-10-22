@@ -22,9 +22,10 @@ data class Book(
     }
 
     companion object CREATOR : Parcelable.Creator<Book> {
-
         override fun createFromParcel(source: Parcel): Book {
-            return Book(source)
+            val id = source.readInt()
+            val name = source.readString() ?: ""
+            return Book(id, name)
         }
 
         override fun newArray(size: Int): Array<Book?> {
@@ -32,8 +33,4 @@ data class Book(
         }
     }
 
-    private constructor(source: Parcel) : this(
-        id = source.readInt(),
-        name = source.readString()
-    )
 }

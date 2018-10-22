@@ -34,11 +34,16 @@
 
         <activity android:name=".BookActivity" />
         <activity android:name=".BookProviderActivity" />
+        <activity android:name=".messenger.BookMessengerActivity" />
 
         <service
             android:name=".service.BookService"
             android:exported="true"
             android:permission="com.morrisware.permission.ACCESS_BOOK_SERVICE"
+            android:process=":book" />
+
+        <service
+            android:name=".messenger.BookMessengerService"
             android:process=":book" />
 
         <provider
